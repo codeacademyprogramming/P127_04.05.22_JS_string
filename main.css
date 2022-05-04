@@ -1,0 +1,71 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 300vh;
+}
+
+header {
+  padding: 40px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.hamburger {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  z-index: 2;
+  position: fixed;
+}
+
+.hamburger > div {
+  height: 4px;
+  width: 34px;
+  background-color: red;
+  transition: 150ms all linear;
+}
+
+.hamburger--opened {
+  transform: translateX(-25%);
+}
+
+.hamburger--opened > div:first-child {
+  transform: rotate(-45deg) translateY(11px);
+  margin: 0;
+}
+
+.hamburger--opened > div:last-child {
+  transform: rotate(45deg) translateY(-11px);
+  margin: 0;
+}
+
+.hamburger--opened > div:nth-child(2) {
+  width: 0;
+}
+
+.menu--content {
+  box-sizing: border-box;
+  padding: 80px 20px 0;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 150ms all linear;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-color: #2d3192;
+}
+
+.menu--content--active {
+  left: 0;
+}
